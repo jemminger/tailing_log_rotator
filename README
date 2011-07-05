@@ -1,13 +1,23 @@
 TailingLogRotator
 =================
 
-Introduction goes here.
+Allows rotation of a log file while keeping its last NNN lines in the new log
+file.
 
+Arguments:
+  log_file_path       full path to the log file to rotate
+
+  lines_to_preserve   how many lines from the existing log file to leave in the
+                      newly rotated file
+
+Options:
+  :hup                the name of the program to send a "killall -HUP" to after
+                      rotation
 
 Example
 =======
 
-Example goes here.
+TailingLogRotator.rotate('/var/log/maillog', 2_000_000, :hup => 'syslogd')
 
 
-Copyright (c) 2011 [name of plugin creator], released under the MIT license
+Copyright (c) 2011 [Jeff Emminger], released under the MIT license
